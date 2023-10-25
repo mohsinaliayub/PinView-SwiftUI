@@ -11,6 +11,8 @@
 		68F2E3DC2AE1309D002A742E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F2E3DB2AE1309D002A742E /* ContentView.swift */; };
 		68F2E3DE2AE1309F002A742E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F2E3DD2AE1309F002A742E /* Assets.xcassets */; };
 		68F2E3E12AE1309F002A742E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68F2E3E02AE1309F002A742E /* Preview Assets.xcassets */; };
+		68F4D88E2AE8B05D006ABEE4 /* PinLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D88D2AE8B05D006ABEE4 /* PinLockView.swift */; };
+		68F4D8902AE8B27A006ABEE4 /* NumberPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F4D88F2AE8B27A006ABEE4 /* NumberPadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		68F2E3DB2AE1309D002A742E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		68F2E3DD2AE1309F002A742E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		68F2E3E02AE1309F002A742E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		68F4D88D2AE8B05D006ABEE4 /* PinLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLockView.swift; sourceTree = "<group>"; };
+		68F4D88F2AE8B27A006ABEE4 /* NumberPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		68F2E3D82AE1309D002A742E /* PinView */ = {
 			isa = PBXGroup;
 			children = (
+				68F4D88C2AE8B03F006ABEE4 /* Pin Components */,
 				68F2E3D92AE1309D002A742E /* PinViewApp.swift */,
 				68F2E3DB2AE1309D002A742E /* ContentView.swift */,
 				68F2E3DD2AE1309F002A742E /* Assets.xcassets */,
@@ -65,6 +70,15 @@
 				68F2E3E02AE1309F002A742E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		68F4D88C2AE8B03F006ABEE4 /* Pin Components */ = {
+			isa = PBXGroup;
+			children = (
+				68F4D88D2AE8B05D006ABEE4 /* PinLockView.swift */,
+				68F4D88F2AE8B27A006ABEE4 /* NumberPadView.swift */,
+			);
+			path = "Pin Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68F4D88E2AE8B05D006ABEE4 /* PinLockView.swift in Sources */,
 				68F2E3DC2AE1309D002A742E /* ContentView.swift in Sources */,
 				68F2E3DA2AE1309D002A742E /* PinViewApp.swift in Sources */,
+				68F4D8902AE8B27A006ABEE4 /* NumberPadView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
