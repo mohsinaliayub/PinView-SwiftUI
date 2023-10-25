@@ -25,7 +25,14 @@ struct ContentView: View {
                         .frame(width: 50, height: 55)
                         // Showing pin at each box with the help of index
                         .overlay {
-                            
+                            if pin.count > index {
+                                let index = pin.index(pin.startIndex, offsetBy: index)
+                                let string = String(pin[index])
+                                
+                                Text(string)
+                                    .font(.title.bold())
+                                    .foregroundStyle(.white)
+                            }
                         }
                 }
             }
