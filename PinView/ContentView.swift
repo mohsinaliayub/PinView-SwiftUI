@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    var lockPin = "512006"
     var pinLength = 6
     
     // State properties
     @State private var pin = ""
+    @State private var animateField = false
     
     var body: some View {
         VStack(spacing: 16) {
@@ -36,6 +38,17 @@ struct ContentView: View {
                         }
                 }
             }
+            .keyframeAnimator(initialValue: CGFloat.zero, trigger: animateField, content: { content, value in
+                content.offset(x: value)
+            }, keyframes: { _ in
+                KeyframeTrack {
+                    CubicKeyframe(30, duration: 0.07)
+                    CubicKeyframe(-30, duration: 0.07)
+                    CubicKeyframe(20, duration: 0.07)
+                    CubicKeyframe(-20, duration: 0.07)
+                    CubicKeyframe(0, duration: 0.07)
+                }
+            })
             .padding(.top, 16)
             .overlay(alignment: .bottomTrailing) {
                 Button("Forgot pin?", action: {  })
@@ -63,6 +76,15 @@ struct ContentView: View {
                     }
                 }
                 .frame(maxHeight: .infinity, alignment: .bottom)
+            }
+        }
+        .onChange(of: pin) { oldValue, newValue in
+            guard newValue.count == pinLength else { return }
+            
+            guard lockPin == pin else {
+                pin = ""
+                animateField.toggle()
+                return
             }
         }
     }
