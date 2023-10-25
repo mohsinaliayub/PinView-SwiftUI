@@ -44,13 +44,11 @@ struct PinLockView<Content: View>: View {
             guard newValue.count == pinLength else { return }
             
             guard lockPin == pin else {
-                print("wrong pin")
                 pin = ""; animateField.toggle()
                 return
             }
             
             withAnimation(.snappy, completionCriteria: .logicallyComplete) {
-                print("Unlocked")
                 isUnlocked = true
             } completion: {
                     // clear pin
