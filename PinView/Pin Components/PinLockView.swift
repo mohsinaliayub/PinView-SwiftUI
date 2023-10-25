@@ -11,7 +11,7 @@ struct PinLockView<Content: View>: View {
     // Lock properties
     var lockPin: String
     var isEnabled: Bool
-    var lockWhenAppGoesBackground: Bool = true
+    var lockWhenAppGoesToBackground: Bool = true
     @ViewBuilder var content: Content
     
     private let pinLength = 4
@@ -20,6 +20,9 @@ struct PinLockView<Content: View>: View {
     @State private var pin = ""
     @State private var animateField = false
     @State private var isUnlocked = false
+    
+    // Scene phase
+    @Environment(\.scenePhase) var phase
     
     var body: some View {
         GeometryReader {
@@ -51,6 +54,12 @@ struct PinLockView<Content: View>: View {
                 isUnlocked = true
             } completion: {
                     // clear pin
+                pin = ""
+            }
+        }
+        .onChange(of: phase) { oldValue, newValue in
+            if newValue == .background && lockWhenAppGoesToBackground {
+                isUnlocked = false
                 pin = ""
             }
         }
