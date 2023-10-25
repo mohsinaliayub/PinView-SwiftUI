@@ -27,4 +27,18 @@ files in your own project.
 
 These files contain all the functionality of pin validation and UI.
 
+## Implementation
+I used a different approach to create pin view. Here is my approach to create pin view component:
 
+- For the pin boxes, I didn't use **TextField**s. I used **RoundedRectangle** and overlayed each with one digit *text*.
+- I had to create a custom number pad to let user provide a value. I used **LazyVGrid** with 3 columns to create an even number pad.
+- I used **ScenePhase** environment value to check when the app goes to background, and let the user provide a custom pin again.
+
+
+## Next steps
+The component is complete, but there are still a few rough edges that I want to work on next. Here they are:
+- [ ] Make sure the pin provided by user does not exceed the pin limit.
+- [ ] Add a time limit (e.g., 5 minutes) after the app goes to background, and asks user to provide pin again.
+
+## Screenshots
+<img src="/Screenshots/app.gif" alt="App testing gif">
