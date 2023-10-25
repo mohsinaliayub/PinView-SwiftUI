@@ -34,6 +34,7 @@ struct PinLockView<Content: View>: View {
                     
                     lockView
                 }
+                .transition(.offset(y: size.height + 50))
             }
         }
         .onChange(of: pin) { oldValue, newValue in
