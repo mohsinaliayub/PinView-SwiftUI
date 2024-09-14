@@ -1,4 +1,4 @@
-# PinView-SwiftUI
+# Pin View SwiftUI
 A custom pin view with SwiftUI. 
 
 ## Description
